@@ -1,0 +1,13 @@
+name: concurrency
+on: [workflow_dispatch]
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    concurrency: c1
+    steps:
+      - run: sleep 10
+  job2: 
+    runs-on: ubuntu-latest
+    concurrency: c1
+    steps:
+      - run: sleep 10
